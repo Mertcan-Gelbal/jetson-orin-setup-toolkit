@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Logs produced by install.sh / verify_system.sh
+setup_verify_*.log
+*.log
+
+# Archives / build artifacts
+*.tar.gz
+*.tar
+*.zip
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
