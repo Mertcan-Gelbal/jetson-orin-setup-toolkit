@@ -1,10 +1,10 @@
 # Jetson Orin Setup Toolkit
 
-NVIDIA Jetson Orin (JetPack 5.x / 6.x) için tek komutla çalışan post-install betikleri.
+One-command post-install scripts for NVIDIA Jetson Orin (JetPack 5.x / 6.x).
 
-Yeni flash'lanmış bir Jetson'u; sistem güncellemesi, geliştirici araçları, GStreamer + CUDA destekli OpenCV, PyTorch, Docker ve doğrulama suite'i ile kullanıma hazır hale getirir.
+Takes a freshly flashed Jetson and brings it to a ready-to-develop state with system updates, developer tools, GStreamer- and CUDA-enabled OpenCV, PyTorch, Docker, and a verification suite.
 
-## Kurulum
+## Install
 
 ```bash
 git clone https://github.com/Mertcan-Gelbal/jetson-orin-setup-toolkit.git
@@ -12,24 +12,28 @@ cd jetson-orin-setup-toolkit
 bash install.sh
 ```
 
-Bittikten sonra `sudo reboot` yapın.
-
-## Modlar
+Reboot when finished:
 
 ```bash
-VERIFY_ONLY=yes bash install.sh    # sadece doğrulama
-INSTALL_ONLY=yes bash install.sh   # doğrulama olmadan kurulum
-ASK_CONFIRM=no bash install.sh     # gözetimsiz
+sudo reboot
 ```
 
-Ayarlar `config.env` dosyasından değiştirilebilir.
+## Modes
 
-## Yardımcı Betikler
+```bash
+VERIFY_ONLY=yes bash install.sh    # verification only
+INSTALL_ONLY=yes bash install.sh   # install without verification
+ASK_CONFIRM=no bash install.sh     # unattended
+```
 
-`scripts/utils/` altındaki betikler tek başına çalıştırılabilir: swap arttırma, MAXN güç modu, ekran kararmasını kapatma, jetson-stats kurulumu.
+Settings can be customized via `config.env`.
 
-Detaylar için [`docs/USAGE.md`](docs/USAGE.md) ve [`docs/TROUBLESHOOTING.md`](docs/TROUBLESHOOTING.md).
+## Utility Scripts
 
-## Lisans
+Scripts under `scripts/utils/` can be run individually: increase swap, set MAXN power mode, disable screen blanking, install jetson-stats.
+
+For details, see [`docs/USAGE.md`](docs/USAGE.md) and [`docs/TROUBLESHOOTING.md`](docs/TROUBLESHOOTING.md).
+
+## License
 
 MIT
