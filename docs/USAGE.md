@@ -6,15 +6,14 @@ This guide goes one level deeper than the README and walks through the most comm
 
 ```bash
 # Clone the repo
-git clone https://github.com/<your-user>/jetson-orin-postinstall.git
-cd jetson-orin-postinstall
+git clone https://github.com/Mertcan-Gelbal/jetson-orin-setup-toolkit.git
+cd jetson-orin-setup-toolkit
 
 # (Optional) review and edit defaults
 nano config.env
 
 # Run
-chmod +x install.sh
-./install.sh
+bash install.sh
 ```
 
 When the run finishes, reboot:
@@ -32,7 +31,7 @@ The reboot is necessary so that:
 ## 2. Verifying after a reboot
 
 ```bash
-VERIFY_ONLY=yes ./install.sh
+VERIFY_ONLY=yes bash install.sh
 ```
 
 This re-runs every diagnostic in `scripts/verify/verify_system.sh` without re-installing anything. The output goes both to the terminal and to `setup_verify_<timestamp>.log`. Attach this log when you open issues — it contains the L4T release, package list, OpenCV build flags, GStreamer plugin probes, and Docker state.
@@ -69,7 +68,7 @@ INSTALL_JETSON_STATS=no
 …or override per-run:
 
 ```bash
-INSTALL_DOCKER=no INSTALL_PYTORCH=no ./install.sh
+INSTALL_DOCKER=no INSTALL_PYTORCH=no bash install.sh
 ```
 
 ## 5. Unattended / fleet provisioning
@@ -77,7 +76,7 @@ INSTALL_DOCKER=no INSTALL_PYTORCH=no ./install.sh
 Set `ASK_CONFIRM=no` to skip the y/N prompt:
 
 ```bash
-ASK_CONFIRM=no ./install.sh 2>&1 | tee provisioning.log
+ASK_CONFIRM=no bash install.sh 2>&1 | tee provisioning.log
 ```
 
 You can also pin the JetsonHacks repo to a known-good commit by editing the wrapper:

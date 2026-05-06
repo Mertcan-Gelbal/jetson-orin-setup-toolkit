@@ -9,8 +9,7 @@ Yeni flash'lanmış bir Jetson'u; sistem güncellemesi, geliştirici araçları,
 ```bash
 git clone https://github.com/Mertcan-Gelbal/jetson-orin-setup-toolkit.git
 cd jetson-orin-setup-toolkit
-chmod +x install.sh
-./install.sh
+bash install.sh
 ```
 
 Bittikten sonra `sudo reboot` yapın.
@@ -18,9 +17,9 @@ Bittikten sonra `sudo reboot` yapın.
 ## Modlar
 
 ```bash
-VERIFY_ONLY=yes ./install.sh    # sadece doğrulama
-INSTALL_ONLY=yes ./install.sh   # doğrulama olmadan kurulum
-ASK_CONFIRM=no ./install.sh     # gözetimsiz
+VERIFY_ONLY=yes bash install.sh    # sadece doğrulama
+INSTALL_ONLY=yes bash install.sh   # doğrulama olmadan kurulum
+ASK_CONFIRM=no bash install.sh     # gözetimsiz
 ```
 
 Ayarlar `config.env` dosyasından değiştirilebilir.
