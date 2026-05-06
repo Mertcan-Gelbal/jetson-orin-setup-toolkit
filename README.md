@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="readme.png" alt="Jetson Orin Setup Toolkit" />
+</p>
+
 # Jetson Orin Setup Toolkit
 
 One-command post-install scripts for NVIDIA Jetson Orin (JetPack 5.x / 6.x).
