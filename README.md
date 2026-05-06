@@ -43,9 +43,10 @@ sudo reboot
 
 | Component        | Details                                                                                |
 | ---------------- | -------------------------------------------------------------------------------------- |
-| PyTorch          | NVIDIA-built wheel matching your installed JetPack version (CUDA-accelerated)          |
-| jetson-stats     | jtop — real-time CPU/GPU/RAM/temperature monitor                                       |
-| JetsonHacks base | `setup_jetson.sh` — VS Code, Chromium, jtop and other JetsonHacks defaults             |
+| PyTorch      | CUDA-accelerated wheel matching your JetPack version    |
+| jetson-stats | jtop — real-time CPU/GPU/RAM/temperature monitor        |
+| Editor       | VS Code                                                 |
+| Browser      | Chromium                                                |
 
 ### Container runtime
 
