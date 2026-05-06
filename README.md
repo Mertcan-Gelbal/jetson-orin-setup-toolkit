@@ -18,19 +18,20 @@ Reboot when finished:
 sudo reboot
 ```
 
-## Modes
+## What Gets Installed
 
-```bash
-VERIFY_ONLY=yes bash install.sh    # verification only
-INSTALL_ONLY=yes bash install.sh   # install without verification
-ASK_CONFIRM=no bash install.sh     # unattended
-```
-
-Settings can be customized via `config.env`.
-
-## Utility Scripts
-
-Scripts under `scripts/utils/` can be run individually: increase swap, set MAXN power mode, disable screen blanking, install jetson-stats.
+- **Developer tools:** `git`, `curl`, `wget`, `build-essential`, `cmake`, `pkg-config`, `make`, `gcc`, `g++`, `gdb`, `nano`, `vim`, `tmux`, `screen`, `htop`, `tree`, `rsync`, `unzip`, `zip`
+- **Python:** `python3`, `python3-pip`, `python3-dev`, `python3-venv`, `python3-setuptools`, `python3-wheel`
+- **Python packages:** `numpy`, `pandas`, `matplotlib`, `pillow`, `tqdm`, `psutil`
+- **GStreamer:** `gstreamer1.0-tools`, `plugins-base`, `plugins-good`, `plugins-bad`, `plugins-ugly`, `libav`
+- **Multimedia:** `ffmpeg`, `v4l-utils`, `libavcodec-dev`, `libavformat-dev`, `libswscale-dev`, `libjpeg-dev`, `libpng-dev`, `libtiff-dev`
+- **OpenCV:** `python3-opencv`, `libopencv-dev` (APT build with GStreamer + CUDA flags)
+- **Hardware utilities:** `i2c-tools`, `lm-sensors`, `usbutils`, `pciutils`, `can-utils`
+- **Networking:** `net-tools`, `iproute2`, `iputils-ping`, `dnsutils`, `openssh-server`, `nmap`, `ethtool`
+- **PyTorch:** NVIDIA-built wheel matching your JetPack version
+- **Docker:** `docker.io`, `docker-compose-plugin` (user added to `docker` group)
+- **JetsonHacks baseline:** `setup_jetson.sh` — VS Code, Chromium, jtop, defaults
+- **jetson-stats (jtop):** real-time Jetson task manager
 
 For details, see [`docs/USAGE.md`](docs/USAGE.md) and [`docs/TROUBLESHOOTING.md`](docs/TROUBLESHOOTING.md).
 
