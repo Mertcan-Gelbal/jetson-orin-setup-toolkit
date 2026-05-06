@@ -20,18 +20,38 @@ sudo reboot
 
 ## What Gets Installed
 
-- **Developer tools:** `git`, `curl`, `wget`, `build-essential`, `cmake`, `pkg-config`, `make`, `gcc`, `g++`, `gdb`, `nano`, `vim`, `tmux`, `screen`, `htop`, `tree`, `rsync`, `unzip`, `zip`
-- **Python:** `python3`, `python3-pip`, `python3-dev`, `python3-venv`, `python3-setuptools`, `python3-wheel`
-- **Python packages:** `numpy`, `pandas`, `matplotlib`, `pillow`, `tqdm`, `psutil`
-- **GStreamer:** `gstreamer1.0-tools`, `plugins-base`, `plugins-good`, `plugins-bad`, `plugins-ugly`, `libav`
-- **Multimedia:** `ffmpeg`, `v4l-utils`, `libavcodec-dev`, `libavformat-dev`, `libswscale-dev`, `libjpeg-dev`, `libpng-dev`, `libtiff-dev`
-- **OpenCV:** `python3-opencv`, `libopencv-dev` (APT build with GStreamer + CUDA flags)
-- **Hardware utilities:** `i2c-tools`, `lm-sensors`, `usbutils`, `pciutils`, `can-utils`
-- **Networking:** `net-tools`, `iproute2`, `iputils-ping`, `dnsutils`, `openssh-server`, `nmap`, `ethtool`
-- **PyTorch:** NVIDIA-built wheel matching your JetPack version
-- **Docker:** `docker.io`, `docker-compose-plugin` (user added to `docker` group)
-- **JetsonHacks baseline:** `setup_jetson.sh` — VS Code, Chromium, jtop, defaults
-- **jetson-stats (jtop):** real-time Jetson task manager
+### Core system
+
+| Category           | Packages                                                                                                          |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| Developer tools    | git, curl, wget, build-essential, cmake, pkg-config, make, gcc, g++, gdb, nano, vim, tmux, screen, htop, tree, rsync, unzip, zip |
+| Python runtime     | python3, python3-pip, python3-dev, python3-venv, python3-setuptools, python3-wheel                                |
+| Python libraries   | numpy, pandas, matplotlib, pillow, tqdm, psutil                                                                   |
+| Hardware utilities | i2c-tools, lm-sensors, usbutils, pciutils, can-utils                                                              |
+| Networking         | net-tools, iproute2, iputils-ping, dnsutils, openssh-server, nmap, ethtool                                        |
+
+### Media & vision
+
+| Component | Details                                                                                  |
+| --------- | ---------------------------------------------------------------------------------------- |
+| GStreamer | gstreamer1.0-tools + plugins-base / good / bad / ugly + libav (CSI/USB camera pipelines) |
+| FFmpeg    | ffmpeg, v4l-utils, libavcodec-dev, libavformat-dev, libswscale-dev                       |
+| Image I/O | libjpeg-dev, libpng-dev, libtiff-dev                                                     |
+| OpenCV    | python3-opencv + libopencv-dev — APT build with GStreamer & CUDA flags enabled           |
+
+### NVIDIA / ML stack
+
+| Component        | Details                                                                                |
+| ---------------- | -------------------------------------------------------------------------------------- |
+| PyTorch          | NVIDIA-built wheel matching your installed JetPack version (CUDA-accelerated)          |
+| jetson-stats     | jtop — real-time CPU/GPU/RAM/temperature monitor                                       |
+| JetsonHacks base | `setup_jetson.sh` — VS Code, Chromium, jtop and other JetsonHacks defaults             |
+
+### Container runtime
+
+| Component | Details                                                                       |
+| --------- | ----------------------------------------------------------------------------- |
+| Docker    | docker.io + docker-compose-plugin, enabled at boot, user added to `docker` group |
 
 For details, see [`docs/USAGE.md`](docs/USAGE.md) and [`docs/TROUBLESHOOTING.md`](docs/TROUBLESHOOTING.md).
 
